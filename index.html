@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES 6 class method assignment</title>
+</head>
+<body>
+    <!-- class to div tag  -->
+    <div class="demo"></div>
+    <!-- js code starts here -->
+    <script type="text/javascript">
+        //By using class ,inherited class ,method and object.
+        //to create  a class inheritance , use the extends keyword.
+
+        class Car{
+            constructor(brandname) {
+                this.car = brandname;
+            }
+            //function to create a class inheritance.
+            show(){
+                return `I have a ${this.car}`;
+            }
+        }
+        //extend keyword to inherit all method from another class.
+        class Model extends Car {
+            constructor (name ,model){
+                super(name);//super method to call the parents  condtructor function.
+                this.model = model;
+            }
+            //another function to extends.
+            show2(){
+                return this.show() + ", it is a " +this.model;
+            }
+        }
+        //create a variables and storesinmycar.
+        let mycar  = new Model("Ford","Mustang.");
+        document.querySelector('.demo').innerHTML = mycar.show2();
+    </script>
+    <!-- js codes ends here. -->
+</body>
+</html>
